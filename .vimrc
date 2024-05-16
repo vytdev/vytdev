@@ -16,6 +16,11 @@ set expandtab
 set colorcolumn=100
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
+syntax on
+filetype plugin indent on
+set incsearch
+set hlsearch
+
 let g:netrw_banner = 0
 let g:netrw_liststyle = 4
 
@@ -33,6 +38,8 @@ Plug 'lambdalisue/vim-glyph-palette'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " i prefer ctrl+n for alias of NERDTreeToggle
