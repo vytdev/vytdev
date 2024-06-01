@@ -13,16 +13,15 @@ set number
 set numberwidth=4
 set shiftwidth=2
 set expandtab
-set colorcolumn=100
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+set background=dark
 
 syntax on
 filetype plugin indent on
 set incsearch
 set hlsearch
 
-let g:netrw_banner = 0
-let g:netrw_liststyle = 4
+inoremap <silent><expr> <Tab> pumvisible() ? coc#pum#confirm() : "\<Tab>"
 
 " thin cursor on insert-mode
 let &t_SI = "\<Esc>[6 q"
@@ -31,29 +30,30 @@ let &t_EI = "\<Esc>[ q"
 " vim-plug configuration
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'sickill/vim-monokai'
 Plug 'lambdalisue/vim-glyph-palette'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " i prefer ctrl+n for alias of NERDTreeToggle
 nnoremap <C-n> :NERDTreeToggle<CR>
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-R>=coc#refresh()\<CR>\<C-Space>"
-
-" editor theme
-colorscheme monokai
 
 " set colors for coc.nvim
-highlight CocErrorSign ctermbg=NONE ctermfg=red guibg=NONE guifg=red
-highlight CocWarningSign ctermbg=NONE ctermfg=yellow guibg=NONE guifg=yellow
-highlight CocInfoSign ctermbg=NONE ctermfg=green guibg=NONE guifg=green
-highlight CocHintSign ctermbg=NONE ctermfg=cyan guibg=NONE guifg=cyan
+hi CocErrorSign   ctermfg=red    guifg=red
+hi CocWarningSign ctermfg=yellow guifg=yellow
+hi CocInfoSign    ctermfg=green  guifg=green
+hi CocHintSign    ctermfg=cyan   guifg=cyan
+
+" nerdtree
+let g:netrw_banner = 0
+let g:netrw_liststyle = 4
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -61,4 +61,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 " auto-pairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`'}
+
+" vscode dark theme
+let g:codedark_italics = 1
+colorscheme codedark
 
