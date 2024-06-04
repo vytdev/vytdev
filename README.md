@@ -28,6 +28,7 @@ Here are some ideas to get you started:
 
 - C (my fav)
 - C++ (though it's challenging!)
+- x86 Assembly (I prefer nasm syntax!)
 - JavaScript
 - TypeScript
 - Python
@@ -46,7 +47,7 @@ Here are some ideas to get you started:
 - System-level programming
 - Making random C projects
 - Implement algorithms on my own
-- Making a custom programming language
+- Making a [custom programming language](https://github.com/vytdev/znc)
 - Creating my own Bedrock server software
 - I like math and science!
 
