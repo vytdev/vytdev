@@ -16,9 +16,9 @@ Here are some ideas to get you started:
 -->
 
 - My real name is Vincent Yanzee J. Tan
-- 14 years old
+- 15 years old
 - He/Him
-- 3rd-year high school student
+- 4th-year high school student
 - Love playing Minecraft
 - My website (made from scratch!) https://vytdev.github.io
 
