@@ -28,28 +28,36 @@ Here are some ideas to get you started:
 
 - C (my fav)
 - C++ (though it's challenging!)
-- x86 Assembly (I prefer nasm syntax!)
+- Assembly
 - JavaScript
 - TypeScript
 - Python
-- Java (rarely...)
-- Rust
 - Lua
 - Node.js
 - Web development
-- GLSL (I enjoy playing with fragment shaders!)
-- Android dev (still figuring it out haha)
+
+I completely forgetten these:
+
+- GLSL
+- Android dev
+- Java
+- Rust
 
 ### 📌 My interests
 
-- Artificial intelligence (ML/DL)
-- Understanding neural networks
+- Making a language VM and a compiler
 - System-level programming
 - Making random C projects
 - Implement algorithms on my own
+- I like math and science!
+- Writing a novel (?)
+
+Old Interests:
+
+- Artificial intelligence (ML/DL)
+- Understanding neural networks
 - Making a [custom programming language](https://github.com/vytdev/znc)
 - Creating my own Bedrock server software
-- I like math and science!
 
 ### 📊 Activity Graphs
 
@@ -73,6 +81,7 @@ Here are some ideas to get you started:
 
 If you have any questions, concerns, or just wanna say hello, feel free to reach out:
 
+- [*Contact Page*](https://vytdev.github.io/contact)
 - vytdev@gmail.com
 
 Thanks for stopping by!

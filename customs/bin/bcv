@@ -1,0 +1,59 @@
+#!/bin/sh
+
+if [ $# -eq 0 ] ; then
+  echo "$0: $0 <num> [base]"
+  echo "    Converts bases from decimal."
+  echo
+  echo "    Arguments:"
+  echo "      num     The number to change base. It"
+  echo "              should be a positive whole"
+  echo "              number."
+  echo "      base    The base to convert to. Allowed"
+  echo "              values are 2 to 64. Defaults to"
+  echo "              64."
+  echo
+  echo "    Part of vytdev's customisation package."
+  exit 1
+fi
+
+validate_num() {
+  echo "$1" | grep -q '^[0-9]\+$'
+  return $?
+}
+
+num=$1
+base=$2
+
+if ! validate_num "$num" ; then
+  echo "\`num\` must be a positive whole integer: $num"
+  exit 1
+fi
+
+if [ -n "$base" ] ; then
+  if ! validate_num "$base" ; then
+    echo "\`base\` must be a positive whole integer: $base"
+    exit 1
+  fi
+  if [ "$base" -lt 2 ] || [ "$base" -gt 64 ] ; then
+    echo "\`base\` must be within 2 to 64: $base"
+    exit 1
+  fi
+else
+  base=64
+fi
+
+if [ "$num" -eq 0 ] ; then
+  echo 0
+  exit
+fi
+
+chars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/"
+
+result=''
+while [ "$num" -gt 0 ] ; do
+  rem=$((num % base))
+  result=$( echo "$chars" | cut -c $((rem + 1)) )"$result"
+  num=$((num / base))
+done
+
+echo "$result"

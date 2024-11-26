@@ -1,0 +1,8 @@
+
+  A set of custom functions. Just put the following into
+  your `~/.profile` or `~/.bashrc`, and you're ready to
+  go!
+
+    export CUSTOMS_HOME=/path/to/customs
+    . $CUSTOMS_HOME/source-sh
+

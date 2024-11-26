@@ -1,0 +1,4 @@
+# A simple init script to initialise the
+# gradle daemon as soon as you open your
+# terminal.
+gradle --daemon

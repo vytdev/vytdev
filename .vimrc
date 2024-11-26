@@ -40,6 +40,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tomasiser/vim-code-dark'
+Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 
 " i prefer ctrl+n for alias of NERDTreeToggle
@@ -63,6 +64,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:AutoPairs = {'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`'}
 
 " vscode dark theme
-let g:codedark_italics = 1
+"let g:codedark_italics = 1
 colorscheme codedark
 

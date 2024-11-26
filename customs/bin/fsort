@@ -1,0 +1,102 @@
+#!/bin/sh
+
+err() {
+  echo "$@" >&2
+}
+
+for arg in $@ ; do
+  if [ "$arg" = '--' ] ; then
+    stop_opts=yes
+    continue
+  fi
+  if echo "$arg" | grep -q '^-.*' && [ "$stop_opts" != yes ] ; then
+    for chr in $(echo "$arg" | fold -w1) ; do case "$chr" in
+      - ) ;;
+      h ) show_help=yes ;;
+      r ) reverse_sort=yes ;;
+      d ) include_dirs=yes ;;
+      n ) number_only=yes ;;
+      * )
+        err "Unrecognized option: -$chr"
+        err "Type '$0 -h' for more info."
+        exit 1
+        ;;
+    esac done
+  else
+    [ "$had_arg" != yes ] && set --
+    set -- "$@" "$arg"
+    had_arg=yes
+  fi
+done
+
+[ "$had_arg" != yes ] && set --
+
+if [ $# -eq 0 ] || [ "$show_help" = yes ] ; then
+  echo "$0: $0 [options] <file...>"
+  echo "    Sort files by renaming them."
+  echo
+  echo "    Options:"
+  echo "      --    Stop parsing options."
+  echo "      -h    Show this help and exit."
+  echo "      -r    Reverse sort order."
+  echo "      -d    Include folders in sorting."
+  echo "      -n    Only put the number in the"
+  echo "            filename."
+  echo
+  echo "    Renames and sorts files into sequential"
+  echo "    numbers based on their last modified"
+  echo "    timestamp."
+  echo
+  echo "    Warning: Do not stop this program once"
+  echo "    it is already sorting to avoid messing"
+  echo "    up your filenames."
+  echo
+  echo "    Part of vytdev's customisation package."
+  exit 1
+fi
+
+# Get a unique temp file ID.
+tmpid=$(bcv $(od -An -N4 -tu4 /dev/random | tr -d ' ') 62)
+echo "Chosen temp ID: $tmpid"
+
+# Get a sorted list.
+echo "Generating list..."
+[ "$reverse_sort" = yes ] && ls_args='r'
+if [ "$include_dirs" = yes ] ; then
+  files=$(ls -dtp$ls_args -- $@)
+else
+  files=$(ls -dtp$ls_args -- $@ | grep -v '/$')
+fi
+
+# FIXBUG: I've got a weird bug from the lines
+# above. If you run 'fsort -n -- *', where -n
+# is the only supplied option, '-n' will be
+# included to $@. It doesn't happen on the other
+# options.
+
+# Prevent overwrite.
+echo "Moving temp files..."
+for f in $files ; do
+  mv "$f" ".tmp_$tmpid-$f"
+done
+
+# Do sorting.
+echo "Sorting..."
+counter=1
+for f in $files ; do
+  dirn="$(dirname "$f")"
+  base="$(basename "$f")"
+  extn="${base#*.}"
+  name="${base%%.*}"
+
+  path="$dirn/$(printf '%05d' $counter)"
+  [ "$number_only" != yes ] && path="$path-$name"
+  path="$path.$extn"
+
+  counter=$((counter + 1))
+
+  mv ".tmp_$tmpid-$f" "$path"
+  echo "  $f  ==>  $path"
+done
+
+echo "Complete!"
