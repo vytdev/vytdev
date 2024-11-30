@@ -10,6 +10,7 @@ alias ytdl="yt-dlp -x --audio-format mp3 --audio-quality 320K -o '%(title)s.%(ex
 
 # other utils
 alias lg='ls -AFlhv --group-directories-first'
+alias lh='ls -Flhv --group-directories-first'
 
 mkcd() {
   mkdir -p "$1"
