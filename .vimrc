@@ -12,6 +12,7 @@
 set number
 set numberwidth=4
 set shiftwidth=2
+set colorcolumn=80
 set expandtab
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 set background=dark
@@ -40,6 +41,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tomasiser/vim-code-dark'
+Plug 'phanviet/vim-monokai-pro'
 Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 
@@ -65,5 +67,7 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`'}
 
 " vscode dark theme
 "let g:codedark_italics = 1
-colorscheme codedark
+"colorscheme codedark
 
+set termguicolors
+colorscheme monokai_pro

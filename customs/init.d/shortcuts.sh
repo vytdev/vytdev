@@ -32,3 +32,10 @@ clh() {
       ;;
   esac
 }
+
+plbsys() {
+  echo "Simulating sound system playback..."
+  file=$1
+  shift
+  play "$file" gain -15 echo 1 1 125 .3 bass 15 treble 7 reverb 50 100 100 100 10 -5 "$@"
+}
