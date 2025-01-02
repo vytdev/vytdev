@@ -41,7 +41,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tomasiser/vim-code-dark'
-Plug 'phanviet/vim-monokai-pro'
+Plug 'sickill/vim-monokai'
 Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 
@@ -70,4 +70,12 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`'}
 "colorscheme codedark
 
 set termguicolors
-colorscheme monokai_pro
+colorscheme monokai
+
+hi Normal      guibg=#1a1a1a
+hi LineNr      guibg=#2b2b2b
+hi ColorColumn guibg=#2b2b2b
+
+" C/C++ syntax highlighting
+"$ cd ~/.vim/pack/git-plugins/start
+"$ git clone https://github.com/bfrg/vim-c-cpp-modern
