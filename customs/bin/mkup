@@ -10,4 +10,4 @@ while [ "$dir" != "/" ]; do
 done
 
 make "$@"
-exit ?
+exit $?

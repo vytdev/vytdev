@@ -18,7 +18,7 @@ Here are some ideas to get you started:
 - My real name is Vincent Yanzee J. Tan
 - 15 years old
 - He/Him
-- 4th-year high school student
+- Grade 11 student
 - Love playing Minecraft
 - My website (made from scratch!) https://vytdev.github.io
 
@@ -36,7 +36,7 @@ Here are some ideas to get you started:
 - Node.js
 - Web development
 
-I completely forgetten these:
+Sometimes, I also work with:
 
 - GLSL
 - Android dev
