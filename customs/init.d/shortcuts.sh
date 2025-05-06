@@ -19,6 +19,7 @@ alias pyev="source /root/.python-venv/bin/activate"
 # other utils
 alias lg='ls -AFlhv --group-directories-first'
 alias lh='ls -Flhv --group-directories-first'
+alias m="eval \"\$(history | sed 's/^[0-9 ]*//' | fzf)\""
 
 mkcd() {
   mkdir -p "$1"
