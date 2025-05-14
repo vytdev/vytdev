@@ -4,4 +4,4 @@ export GPG_TTY=$(tty)
 export GNUPGHOME=$HOME/.gnupg
 export EDITOR=vim
 
-. /etc/bash_completion.d/global-python-argcomplete
+#. /etc/bash_completion.d/global-python-argcomplete

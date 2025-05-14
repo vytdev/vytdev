@@ -7,6 +7,8 @@ s="equalizer 500 10q -20 gain -4 bass 5 compand 3,60 -10,0 reverb 50 50 100 100 
 # git shortcuts
 alias gs='git status'
 alias gll='git log'
+alias gdf='git diff'
+alias gc='git commit'
 
 # youtube-dl
 alias ytdl="yt-dlp -x --audio-format mp3 --audio-quality 320K -o '%(title)s.%(ext)s'"
@@ -16,7 +18,15 @@ alias ytav="yt-dlp -f 'bestvideo[height<=720]+bestaudio/best[abr>=160]' -o '%(ti
 # py env shortcut
 alias pyev="source /root/.python-venv/bin/activate"
 
+# colorise ls
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
 # other utils
+alias ll='ls -l'
+alias la='ls -la'
+
 alias lg='ls -AFlhv --group-directories-first'
 alias lh='ls -Flhv --group-directories-first'
 alias m="eval \"\$(history | tac | sed 's/^[0-9 ]*//' | fzf)\""
