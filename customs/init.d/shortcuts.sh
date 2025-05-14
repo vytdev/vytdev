@@ -7,6 +7,7 @@ s="equalizer 500 10q -20 gain -4 bass 5 compand 3,60 -10,0 reverb 50 50 100 100 
 # git shortcuts
 alias gs='git status'
 alias gll='git log'
+alias gad='git add'
 alias gdf='git diff'
 alias gc='git commit'
 

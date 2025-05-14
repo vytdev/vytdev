@@ -7,6 +7,10 @@
 # └── $
 #
 
+
+custom_path_to_git_prompt='/usr/share/git/git-prompt.sh'
+
+
 # First, we need to check if the terminal
 # supports ANSI colours.
 case "$TERM" in
@@ -24,8 +28,8 @@ colored='\n\[\e[0m\]\[\e[38;2;128;128;128m\]┌─[\[\e[32m\]\u@\h\[\e[38;2;128;
 
 # We need __git_ps1
 if ! type __git_ps1 >/dev/null 2>&1 ; then
-  if [ -r /etc/bash_completion.d/git-prompt ] ; then
-    . /etc/bash_completion.d/git-prompt
+  if [ -r "$custom_path_to_git_prompt" ] ; then
+    . "$custom_path_to_git_prompt"
     #GIT_PS1_SHOWCOLORHINTS=true
   else
     __git_ps1() { return; }
@@ -43,3 +47,6 @@ fi
 unset colorize
 unset nocolor
 unset colored
+
+
+unset custom_path_to_git_prompt
