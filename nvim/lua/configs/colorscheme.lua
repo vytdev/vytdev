@@ -1,14 +1,14 @@
-require("catppuccin").setup({
-  flavour = "mocha",
+require('catppuccin').setup({
+  flavour = 'mocha',
   transparent_background = false,
   color_overrides = {
     mocha = {
-      base = "#1a1a1a",
-      mantle = "#121212",
-      crust = "#0e0e0e",
-      surface0 = "#2a2a2a",
-      surface1 = "#333333",
-      text = "#dddddd",
+      base = '#1a1a1a',
+      mantle = '#121212',
+      crust = '#0e0e0e',
+      surface0 = '#2a2a2a',
+      surface1 = '#333333',
+      text = '#dddddd',
     },
   },
   integrations = {
@@ -21,14 +21,14 @@ require("catppuccin").setup({
     native_lsp = {
       enabled = true,
       underlines = {
-        errors = { "undercurl" },
-        hints = { "undercurl" },
-        warnings = { "undercurl" },
-        information = { "undercurl" },
+        errors = { 'undercurl' },
+        hints = { 'undercurl' },
+        warnings = { 'undercurl' },
+        information = { 'undercurl' },
       },
     },
   },
 })
 
 -- apply theme
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme('catppuccin')
