@@ -26,6 +26,10 @@ esac
 nocolor='\n┌─[\u@\h]─(\w)$(__git_ps1 " <%s>") [$?] \d \t\n└── \$ '
 colored='\n\[\e[0m\]\[\e[38;2;128;128;128m\]┌─[\[\e[32m\]\u@\h\[\e[38;2;128;128;128m\]]─(\[\e[33m\]\w\[\e[38;2;128;128;128m\])$(__git_ps1 " <\[\e[35m\]%s\[\e[38;2;128;128;128m\]>") [\[\e[36m\]$?\[\e[38;2;128;128;128m\]] \[\e[34m\]\d \t\n\[\e[38;2;128;128;128m\]└── \[\e[31m\]\$\[\e[0m\] '
 
+# Debian-style prompt.
+deb_ncol='\u@\h:\w\$ '
+deb_wcol='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
 # We need __git_ps1
 if ! type __git_ps1 >/dev/null 2>&1 ; then
   if [ -r "$custom_path_to_git_prompt" ] ; then
@@ -44,9 +48,18 @@ else
   PS1=$nocolor
 fi
 
+# Debian-style.
+# if [ "$colorize" = yes ] ; then
+#   PS1=$deb_wcol
+# else
+#   PS1=$deb_ncol
+# fi
+
 unset colorize
 unset nocolor
 unset colored
 
+unset deb_ncol
+unset deb_wcol
 
 unset custom_path_to_git_prompt
