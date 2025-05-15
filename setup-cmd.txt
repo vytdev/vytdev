@@ -1,0 +1,8 @@
+sudo pacman -S sox pulseaudio ffmpeg libmad man-db man-pages git github-cli vim neovim fzf bat hexedit gcc clang gdb binutils patchelf make python nodejs npm go rust lua curl fish starship htop python-pip python-pipx pkgfile neofetch eza pacman-contrib lua-language-server figlet ripgrep
+
+gh extension install dlvhdr/gh-dash
+cargo install taplo-cli --features lsp
+
+# setup ssh
+# setup gpg
+# git config user.name and user.email
