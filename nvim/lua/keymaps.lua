@@ -13,6 +13,7 @@ map('n', '];', dropb.select_next_context, { desc = 'Select next ctx' })
 
 map('n', '<leader>xx', '<cmd>Trouble diagnostics<CR>', { desc = 'Diagnostics'})
 map('n', '<leader>e' , '<cmd>NvimTreeToggle<CR>',      { desc = 'Tree' })
+map('n', '<leader>a', '<cmd>AerialToggle!<CR>',        { desc = 'Symbols' })
 
 map('n', '<Tab>',      '<cmd>BufferLineCycleNext<CR>', { desc = 'Next Buff' })
 map('n', '<S-Tab>',    '<cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buff' })

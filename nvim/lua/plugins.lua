@@ -16,6 +16,7 @@ require('lazy').setup({
   { 'folke/trouble.nvim' },
   { 'goolord/alpha-nvim' },
   { 'Bekaboo/dropbar.nvim' },
+  { 'stevearc/aerial.nvim' },
 
   -- treesitter
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
