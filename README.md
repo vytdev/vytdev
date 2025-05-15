@@ -21,6 +21,8 @@ Here are some ideas to get you started:
 - Grade 11 student
 - Love playing Minecraft
 - My website (made from scratch!) https://vytdev.github.io
+- Fun fact: I made all of my projects here on GitHub from my phone!
+- I use arch, btw!
 
 ![Profile Views](https://komarev.com/ghpvc/?username=vytdev&label=Profile%20views&color=0e75b6&style=flat)
 
@@ -48,16 +50,9 @@ Sometimes, I also work with:
 - Making a language VM and a compiler
 - System-level programming
 - Making random C projects
-- Implement algorithms on my own
+- Implement algos on my own
 - I like math and science!
 - Writing a novel (?)
-
-Old Interests:
-
-- Artificial intelligence (ML/DL)
-- Understanding neural networks
-- Making a [custom programming language](https://github.com/vytdev/znc)
-- Creating my own Bedrock server software
 
 ### 📊 Activity Graphs
 
