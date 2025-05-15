@@ -15,3 +15,9 @@ pipx install pyright
 # setup ssh
 # setup gpg
 # git config user.name and user.email
+
+
+# dotfiles/configs
+ln -s  ~/vytdev/.bashrc  ~/.bashrc
+ln -s  ~/vytdev/.vimrc   ~/.vimrc
+ln -s  ~/vytdev/nvim     ~/.config/nvim
