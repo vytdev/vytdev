@@ -1,0 +1,11 @@
+{
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": ["Makefile", ".git/"],
+      "args": ["--background-index=false"]
+    }
+  }
+}
+
