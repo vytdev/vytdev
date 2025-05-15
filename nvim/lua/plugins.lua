@@ -14,6 +14,7 @@ require("lazy").setup({
   { "nvim-lualine/lualine.nvim" },
   { "folke/trouble.nvim" },
   { "goolord/alpha-nvim" },
+  { "Bekaboo/dropbar.nvim" },
 
   -- treesitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
@@ -37,4 +38,5 @@ require("lazy").setup({
 
   -- search & nav
   { "nvim-telescope/telescope.nvim" },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 })
