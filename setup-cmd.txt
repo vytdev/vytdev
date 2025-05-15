@@ -1,7 +1,16 @@
-sudo pacman -S sox pulseaudio ffmpeg libmad man-db man-pages git github-cli vim neovim fzf bat hexedit gcc clang gdb binutils patchelf make python nodejs npm go rust lua curl fish starship htop python-pip python-pipx pkgfile neofetch eza pacman-contrib lua-language-server figlet ripgrep
+pacman -S sox pulseaudio ffmpeg libmad man-db man-pages git github-cli vim  \
+    neovim fzf bat hexedit gcc gdb binutils patchelf make python nodejs npm \
+    go rust lua curl fish starship htop python-pip python-pipx pkgfile eza  \
+    neofetch pacman-contrib figlet ripgrep
 
 gh extension install dlvhdr/gh-dash
-cargo install taplo-cli --features lsp
+
+# language servers
+pacman -S clang     # for clangd
+pacman -S lua-language-server
+cargo install taplo-cli --features lsp     # .toml
+npm install -g typescript-language-server
+pipx install pyright
 
 # setup ssh
 # setup gpg
