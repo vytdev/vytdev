@@ -1,8 +1,9 @@
 local dashboard = require('alpha.themes.dashboard')
+local alpha = require('alpha')
 local splashes = require('splash')
 
 vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#53f768' })
-vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#44ab52' })
+vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#888888' })
 
 dashboard.section.header.opts.hl  = 'DashboardHeader'
 dashboard.section.footer.opts.hl  = 'DashboardFooter'
@@ -40,7 +41,6 @@ dashboard.section.header.val = {
   [[     |___|  |___|                                          ]],
   [[                        -                         +=       ]],
   [[                                                           ]],
-  get_splash(),
 }
 
 local btn = dashboard.button
@@ -63,4 +63,11 @@ dashboard.section.footer.val = {
   get_nvim_version(),
 }
 
-require('alpha').setup(dashboard.opts)
+-- change the splash text every 20 secs
+local timer = vim.loop.new_timer()
+timer:start(0, 20000, vim.schedule_wrap(function()
+  dashboard.section.footer.val[1] = get_splash()
+  alpha.redraw()
+end))
+
+alpha.setup(dashboard.opts)
