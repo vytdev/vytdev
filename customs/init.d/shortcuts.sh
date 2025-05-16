@@ -1,38 +1,50 @@
-# This script adds some shortcut commands
-# in the terminal.
+# Shortcuts
 
+# colourise ls
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
 
-# i use nvim
-alias code='nvim'
+# cd aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
-# git shortcuts
+# ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lsd='ls -l | grep "^d"'
+alias lst='ls -lt'
+alias lg='ls -AFlhv --group-directories-first'
+alias lh='ls -Flhv --group-directories-first'
+
+# common git cmds
 alias gs='git status'
-alias gll='git log'
-alias gad='git add'
-alias gdf='git diff'
+alias gg='git log'
+alias gd='git diff'
+alias ga='git add'
 alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias go='git checkout'
+alias gb='git branch'
 
-# youtube-dl
+# other aliases
+alias cls='clear'
+alias hist='history | less'
+alias mkdir='mkdir -pv'
+alias code='nvim'
+alias m="eval \"\$(history | tac | sed 's/^[0-9 ]*//' | fzf)\""
+
+# yt-dlp aliases
 alias ytdl="yt-dlp -x --audio-format mp3 --audio-quality 320K -o '%(title)s.%(ext)s'"
 alias ytvd="yt-dlp -f 'bv*+ba/best' --merge-output-format mp4 -o '%(title)s.%(ext)s'"
 alias ytav="yt-dlp -f 'bestvideo[height<=720]+bestaudio/best[abr>=160]' -o '%(title)s.%(ext)s'"
 
 # py env shortcut
-#alias pyev="source /root/.python-venv/bin/activate"
+#alias pyev="source ~/.python-venv/bin/activate"
 
-# colorise ls
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-
-# other utils
-alias ll='ls -l'
-alias la='ls -la'
-alias lg='ls -AFlhv --group-directories-first'
-alias lh='ls -Flhv --group-directories-first'
-
-# fuzzy find prev cmd
-alias m="eval \"\$(history | tac | sed 's/^[0-9 ]*//' | fzf)\""
 
 # my sox presets (when i'm listening music)
 s_bass="equalizer 500 10q -20 gain -4 bass 5 compand 3,60 -10,0"
