@@ -12,7 +12,11 @@ pacman -S nodejs npm lua python python-pip python-pipx
 
 # convinience tools
 pacman -S fzf bat curl starship htop pkgfile eza neofetch figlet ripgrep \
-          pacman-contrib zsh
+          pacman-contrib
+
+# zsh & oh-my-zsh
+#pacman -S zsh
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 gh extension install dlvhdr/gh-dash
 
