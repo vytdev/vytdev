@@ -45,14 +45,14 @@ dashboard.section.header.val = {
 
 local btn = dashboard.button
 dashboard.section.buttons.val = {
-  btn('e', '  New', '<cmd>ene <BAR> startinsert <CR>'),
-  btn('r', '  Recent', '<cmd>Telescope oldfiles <CR>'),
-  btn('f', '  Find file', '<cmd>Telescope find_files <CR>'),
-  btn('t', '  Find text', '<cmd>Telescope live_grep <CR>'),
-  btn('h', '  Help index', '<cmd>Telescope help_tags <CR>'),
-  btn('x', '  Terminal', '<cmd>terminal <CR>'),
-  btn('p', '  Plugins', '<cmd>Lazy <CR>'),
-  btn('c', '  Config', '<cmd>e ~/.config/nvim/init.lua<CR>'),
+  btn('e', '  New',         '<cmd>ene <BAR> startinsert<CR>'),
+  btn('r', '  Recent',      '<cmd>Telescope oldfiles<CR>'),
+  btn('f', '  Find file',   '<cmd>Telescope find_files<CR>'),
+  btn('t', '  Find text',   '<cmd>Telescope live_grep<CR>'),
+  btn('h', '  Help index',  '<cmd>Telescope help_tags<CR>'),
+  btn('x', '  Terminal',    '<cmd>terminal $SHELL<CR>'),
+  btn('p', '  Plugins',     '<cmd>Lazy<CR>'),
+  btn('c', '  Config',      '<cmd>e ~/.config/nvim/init.lua<CR>'),
   btn('q', '  Quit Neovim', '<cmd>qa<CR>'),
 }
 
