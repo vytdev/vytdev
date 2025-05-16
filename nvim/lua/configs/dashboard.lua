@@ -1,30 +1,66 @@
 local dashboard = require('alpha.themes.dashboard')
+local splashes = require('splash')
 
-dashboard.section.header.val = {
-  [[               _      _              ]],
-  [[  __   ___   _| |_ __| | _____   __  ]],
-  [[  \ \ / / | | | __/ _` |/ _ \ \ / /  ]],
-  [[   \ V /| |_| | || (_| |  __/\ V /   ]],
-  [[    \_/  \__, |\__\__,_|\___| \_/    ]],
-  [[         |___/                       ]],
-}
+vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#53f768' })
+vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#44ab52' })
 
-dashboard.section.buttons.val = {
-  dashboard.button('f', '  Find file', ':Telescope find_files <CR>'),
-  dashboard.button('e', '  New file', ':ene <BAR> startinsert <CR>'),
-  dashboard.button('r', '  Recently used files', ':Telescope oldfiles <CR>'),
-  dashboard.button('t', '  Find text', ':Telescope live_grep <CR>'),
-  dashboard.button('c', '  Configuration', ':e ~/.config/nvim/init.lua<CR>'),
-  dashboard.button('q', '  Quit Neovim', ':qa<CR>'),
-}
+dashboard.section.header.opts.hl  = 'DashboardHeader'
+dashboard.section.footer.opts.hl  = 'DashboardFooter'
 
-local function footer()
-  return 'hmmm...'
+local function get_splash()
+  return splashes[math.random(#splashes)]
 end
 
-dashboard.section.footer.val = footer()
-dashboard.section.footer.opts.hl = 'Type'
-dashboard.section.header.opts.hl = 'Include'
-dashboard.section.buttons.opts.hl = 'Keyword'
+local function get_time()
+  local date = os.date('%Y %b %d')
+  local time = os.date('%H:%M:%S')
+  return ' ' .. date .. '  ' .. time
+end
+
+local function get_cwd()
+  local cwd = vim.fn.getcwd()
+  return ' ' .. cwd
+end
+
+local function get_nvim_version()
+  local v = vim.version()
+  return string.format(' Neovim %d.%d.%d', v.major, v.minor, v.patch)
+end
+
+dashboard.section.header.val = {
+  [[  *                            _.                          ]],
+  [[                                                           ]],
+  [[  +-----+    +-----+                              `        ]],
+  [[  |   __|    |__   |    Hello,       _      _              ]],
+  [[  |  |##|    |##|  |    __   ___   _| |_ __| | _____   __  ]],
+  [[  +--+--|____|--+--+    \ \ / / | | | __/ _` |/ _ \ \ / /  ]],
+  [[     ___|    |___        \ V /| |_| | || (_| |  __/\ V /   ]],
+  [[     |          |         \_/  \__, |\__\__,_|\___| \_/    ]],
+  [[     |   +--+   |              |___/                   o   ]],
+  [[     |___|  |___|                                          ]],
+  [[                        -                         +=       ]],
+  [[                                                           ]],
+  get_splash(),
+}
+
+local btn = dashboard.button
+dashboard.section.buttons.val = {
+  btn('e', '  New', '<cmd>ene <BAR> startinsert <CR>'),
+  btn('r', '  Recent', '<cmd>Telescope oldfiles <CR>'),
+  btn('f', '  Find file', '<cmd>Telescope find_files <CR>'),
+  btn('t', '  Find text', '<cmd>Telescope live_grep <CR>'),
+  btn('h', '  Help index', '<cmd>Telescope help_tags <CR>'),
+  btn('x', '  Terminal', '<cmd>terminal <CR>'),
+  btn('p', '  Plugins', '<cmd>Lazy <CR>'),
+  btn('c', '  Config', '<cmd>e ~/.config/nvim/init.lua<CR>'),
+  btn('q', '  Quit Neovim', '<cmd>qa<CR>'),
+}
+
+dashboard.section.footer.val = {
+  'hmm...',
+  get_time(),
+  get_cwd(),
+  get_nvim_version(),
+}
 
 require('alpha').setup(dashboard.opts)

@@ -1,0 +1,15 @@
+return {
+  'Hello, world!!',
+  'Vim\'s a legend.',
+  '// TODO: make coffee',
+  ':wq -- and off you go',
+  'The sacred tool of wisdom.',
+  'Vim is not a cult... probably',
+  ':term, :term, :term!!',
+  'Use fzf.',
+  'Tip: Use `<L>ff` to fuzzy find files.',
+  'Tip: Use `<L>fg` to search on your cwd.',
+  'Tip: Use `<L>fr` to list recent files.',
+  'Fancy a project tree? Use `<L>e`.',
+  '`<L>a`: Show the symbols!',
+}

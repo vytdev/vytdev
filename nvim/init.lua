@@ -1,3 +1,6 @@
+-- setup lua env
+math.randomseed(os.time()) -- random seed
+
 -- bootstrap and load lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
