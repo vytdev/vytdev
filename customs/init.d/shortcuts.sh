@@ -33,7 +33,6 @@ alias gb='git branch'
 # other aliases
 alias cls='clear'
 alias hist='history | less'
-alias mkdir='mkdir -pv'
 alias code='nvim'
 alias m="eval \"\$(history | tac | sed 's/^[0-9 ]*//' | fzf)\""
 
