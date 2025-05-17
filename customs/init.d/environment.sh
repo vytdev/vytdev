@@ -36,7 +36,8 @@ export LESS="-R"  # show ansi colours in `less`
 eval "$(dircolors -b)"
 
 # starting dir
-shopt -q login_shell && cd ~/projects
+export WDIR="$HOME/projects"
+shopt -q login_shell && cd "$WDIR"
 
 # completions
 #. /etc/bash_completion.d/global-python-argcomplete
