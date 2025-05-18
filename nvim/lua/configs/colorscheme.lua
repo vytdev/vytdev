@@ -16,6 +16,10 @@ require('catppuccin').setup({
     nvimtree = true,
     telescope = true,
     treesitter = true,
+    bufferline = true,
+    notify = true,
+    alpha = true,
+    aerial = true,
     lsp_trouble = true,
     indent_blankline = { enabled = true },
     native_lsp = {
