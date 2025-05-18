@@ -21,7 +21,4 @@ map('n', '<Tab>',      '<cmd>BufferLineCycleNext<CR>', { desc = 'Next Buff' })
 map('n', '<S-Tab>',    '<cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buff' })
 map('n', '<leader>bd', '<cmd>bdelete<CR>',             { desc = 'Rmov Buff' })
 
-require('lsp-zero').on_attach(function(_, bufnr)
-  map('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
-  map('n', 'K',  vim.lsp.buf.hover,      { buffer = bufnr })
-end)
+-- see 'nvim/lua/configs/lsp.lua'

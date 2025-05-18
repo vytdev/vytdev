@@ -32,3 +32,12 @@ require('catppuccin').setup({
 
 -- apply theme
 vim.cmd.colorscheme('catppuccin')
+
+-- setup other hls
+local palette = require('catppuccin.palettes')
+                  .get_palette(vim.g.catppuccin_flavour or 'mocha')
+local hl = vim.api.nvim_set_hl
+
+hl(0, 'CmpSignatureActiveParameter', { fg = palette.teal, bold = true })
+hl(0, 'CmpSignatureHelp', { fg = palette.text, bg = palette.surface1 })
+hl(0, 'CmpSignatureHelpBorder', { fg = palette.blue })
