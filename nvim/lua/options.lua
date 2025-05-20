@@ -11,11 +11,13 @@ vim.opt.softtabstop = 2
 vim.opt.tabstop = 4
 vim.opt.colorcolumn = '80'
 
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+vim.opt.updatetime = 250
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
