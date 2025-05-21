@@ -45,4 +45,8 @@ local hl = vim.api.nvim_set_hl
 hl(0, 'CmpSignatureActiveParameter', { fg = palette.teal, bold = true })
 hl(0, 'CmpSignatureHelp', { fg = palette.text, bg = palette.surface1 })
 hl(0, 'CmpSignatureHelpBorder', { fg = palette.blue })
+
 hl(0, 'IblScope', { fg = palette.maroon })
+
+hl(0, 'DashboardHeader', { fg = palette.green })
+hl(0, 'DashboardFooter', { fg = palette.subtext0 })

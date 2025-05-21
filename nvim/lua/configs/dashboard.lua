@@ -1,9 +1,6 @@
 local dashboard = require('alpha.themes.dashboard')
 local alpha = require('alpha')
 
-vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#53f768' })
-vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#888888' })
-
 dashboard.section.header.opts.hl  = 'DashboardHeader'
 dashboard.section.footer.opts.hl  = 'DashboardFooter'
 
