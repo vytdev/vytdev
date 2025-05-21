@@ -1,182 +1,110 @@
-# gruvbox-rainbow preset.
+# vytdev's starship prompt setup.
+# It's not that much, but it's blazingly fast!!
+#
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# Here's what I actually need:
+#
+# - username & host
+# - curr work dir
+# - last err code
+# - curr branch
+# - date and time
+# - how long the last cmd took (optional)
+# - "$" or "#" in a new line (optional)
+
+add_newline = true
+palette = 'cust'
+
 format = """
-[](color_orange)\
-$os\
-$username\
-[](bg:color_yellow fg:color_orange)\
+[╭](fg:col_grey)\
 $directory\
-[](fg:color_yellow bg:color_aqua)\
 $git_branch\
-$git_status\
-[](fg:color_aqua bg:color_blue)\
-$c\
-$cpp\
-$rust\
-$golang\
-$nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
-$python\
-[](fg:color_blue bg:color_bg3)\
-$docker_context\
-$conda\
-$pixi\
-[](fg:color_bg3 bg:color_bg1)\
+$fill\
+$cmd_duration\
+$status\
 $time\
-[ ](fg:color_bg1)\
-$line_break$character"""
+$username\
+$hostname\
+[─](fg:col_grey)\
+$line_break\
+[╰─](fg:col_grey)\
+$character
+"""
 
-palette = 'gruvbox_dark'
+[palettes.cust]
+col_grey =      '#373737'
+col_user =      '#e43b16'
+col_host =      '#82c826'
+col_dir =       '#1580ea'
+col_branch =    '#33cc80'
+col_time =      '#e37e54'
+col_dur =       '#e354aa'
+col_stat =      '#e3bd54'
 
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
+col_green =     '#44ff44'
+col_red =       '#ff4242'
 
-[os]
-disabled = false
-style = "bg:color_orange fg:color_fg0"
-
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-EndeavourOS = ""
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
-
-[username]
-show_always = true
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user ]($style)'
-
-[directory]
-style = "fg:color_fg0 bg:color_yellow"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
-
-[git_branch]
-symbol = ""
-style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
-
-[git_status]
-style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[c]
-symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[cpp]
-symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[rust]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[golang]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[php]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[java]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[kotlin]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[haskell]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[python]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[docker_context]
-symbol = ""
-style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
-
-[conda]
-style = "bg:color_bg3"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
-
-[pixi]
-style = "bg:color_bg3"
-format = '[[ $symbol( $version)( $environment) ](fg:color_fg0 bg:color_bg3)]($style)'
-
-[time]
-disabled = false
-time_format = "%R"
-style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+[character]
+success_symbol = "[ ](bold fg:col_green)"
+error_symbol = "[ ](bold fg:col_red)"
 
 [line_break]
 disabled = false
 
-[character]
+[fill]
+symbol = '─'
+style = 'fg:col_grey'
+
+[username]
+format = """[─](fg:col_grey)\
+[  ](bg:col_user)[](fg:col_user bg:col_grey)\
+[ $user](fg:col_user bg:col_grey)"""
+show_always = true
+
+[hostname]
+format = """[─](fg:col_grey)\
+[  ](bg:col_host)[](fg:col_host bg:col_grey)\
+[ $hostname](fg:col_host bg:col_grey)"""
+ssh_only = true
+
+[directory]
+format = """[─](fg:col_grey)\
+[  ](bg:col_dir)[](fg:col_dir bg:col_grey)\
+[ $path[$read_only](fg:col_red)](fg:col_dir bg:col_grey)"""
+read_only = '  '
+truncate_to_repo = true
+truncation_length = 2
+truncation_symbol = '…/'
+
+[git_branch]
+format = """[─](fg:col_grey)\
+[  ](bg:col_branch)[](fg:col_branch bg:col_grey)\
+[ $branch(:$remote_branch)](fg:col_branch bg:col_grey)"""
+
+[time]
+format = """[─](fg:col_grey)\
+[  ](bg:col_time)[](fg:col_time bg:col_grey)\
+[ $time](fg:col_time bg:col_grey)"""
+time_format = '%Y-%m-%d %H:%M'
 disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
+[cmd_duration]
+format = """[─](fg:col_grey)\
+[  ](bg:col_dur)[](fg:col_dur bg:col_grey)\
+[ $duration](fg:col_dur bg:col_grey)"""
+min_time = 1_000
+
+[status]
+format = """[─](fg:col_grey)\
+[ $symbol ](bg:col_stat)[](fg:col_stat bg:col_grey)\
+[ $status](fg:col_stat bg:col_grey)"""
+disabled = false
+map_symbol = true
+symbol = ''
+success_symbol = ''
+not_executable_symbol = ''
+not_found_symbol = ''
+sigint_symbol = ''
+signal_symbol = ''

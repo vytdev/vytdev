@@ -18,6 +18,9 @@ require('lazy').setup({
   { 'Bekaboo/dropbar.nvim' },
   { 'stevearc/aerial.nvim' },
 
+  -- tools
+  { 'uga-rosa/ccc.nvim' },
+
   -- treesitter
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
     event = { 'BufReadPost', 'BufNewFile' } },
