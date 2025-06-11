@@ -8,11 +8,11 @@ pacman -S man-db man-pages git github-cli vim neovim
 pacman -S hexedit gcc gdb binutils patchelf make go rust
 
 # high-level
-pacman -S nodejs npm lua python python-pip python-pipx
+pacman -S nodejs npm lua python python-pip python-pipx jre-openjdk
 
 # convinience tools
 pacman -S fzf bat curl starship htop pkgfile eza neofetch figlet ripgrep \
-          pacman-contrib
+          pacman-contrib zip inotify-tools
 
 # zsh & oh-my-zsh
 #pacman -S zsh
