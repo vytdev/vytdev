@@ -1,0 +1,16 @@
+#!/bin/sh
+
+WATCH_DIR="${1:-src}"
+echo "DIR: $WATCH_DIR"
+echo
+
+
+# every file change...
+while inotifywait -r -e modify,create,delete "$WATCH_DIR" >/dev/null 2>&1 ; do
+
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')]"
+
+  # ...run make
+  make
+
+done
