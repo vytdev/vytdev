@@ -15,44 +15,23 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-- My real name is Vincent Yanzee J. Tan
-- 15 years old
-- He/Him
-- Grade 11 student
-- Love playing Minecraft
-- My website (made from scratch!) https://vytdev.github.io
-- Fun fact: I made all of my projects here on GitHub from my phone!
-- I use arch, btw!
+- 🖋️ Vincent Yanzee J. Tan
+- 🗓️ 15 years old
+- 😄 He/Him
+- 📚 Grade 11 student
+- ⛏️ Minecraft Player!
+- 🌐 https://vytdev.github.io
+- 🔍 Fun fact: Made all of my projects from my phone!
+- 📦 C (my fav!), JavaScript, TypeScript, Python, Lua, Node.js, Web development
+- 📬 Reach me: [here](https://vytdev.github.io/contact) or `vytdev@gmail.com`
 
-![Profile Views](https://komarev.com/ghpvc/?username=vytdev&label=Profile%20views&color=0e75b6&style=flat)
+Help me save for a laptop!
 
-### 📦 I use and I do
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W51I5VSO)
 
-- C (my fav)
-- C++ (though it's challenging!)
-- Assembly
-- JavaScript
-- TypeScript
-- Python
-- Lua
-- Node.js
-- Web development
+Thanks for stopping by!
 
-Sometimes, I also work with:
-
-- GLSL
-- Android dev
-- Java
-- Rust
-
-### 📌 My interests
-
-- Making a language VM and a compiler
-- System-level programming
-- Making random C projects
-- Implement algos on my own
-- I like math and science!
-- Writing a novel (?)
+![Profile Visits](https://komarev.com/ghpvc/?username=vytdev&label=Profile%20visits&color=0e75b6&style=flat)
 
 ### 📊 Activity Graphs
 
@@ -71,13 +50,3 @@ Sometimes, I also work with:
 
   </div>
 </details>
-
-### 📫 Let's connect!
-
-If you have any questions, concerns, or just wanna say hello, feel free to reach out:
-
-- [*Contact Page*](https://vytdev.github.io/contact)
-- vytdev@gmail.com
-
-Thanks for stopping by!
-
