@@ -12,7 +12,7 @@ pacman -S nodejs npm lua python python-pip python-pipx jre-openjdk
 
 # convinience tools
 pacman -S fzf bat curl starship htop pkgfile eza neofetch figlet ripgrep \
-          pacman-contrib zip inotify-tools pwgen
+          pacman-contrib zip inotify-tools pwgen bind
 
 # research papers..
 pacman -S texlive biber
@@ -22,6 +22,7 @@ pacman -S texlive biber
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 gh extension install dlvhdr/gh-dash
+gh extension install github/gh-copilot
 
 # language servers
 pacman -S clang     # for clangd

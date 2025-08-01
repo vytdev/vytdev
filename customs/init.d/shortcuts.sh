@@ -37,7 +37,7 @@ alias code='nvim'
 alias m="eval \"\$(history | tac | sed 's/^[0-9 ]*//' | fzf)\""
 
 # yt-dlp aliases
-alias ytdl="yt-dlp -x --audio-format mp3 --audio-quality 320K -o '%(title)s.%(ext)s'"
+alias ytdl="yt-dlp -x --audio-format mp3 --audio-quality 0 -o '%(title)s.%(ext)s'"
 alias ytvd="yt-dlp -f 'bv*+ba/best' --merge-output-format mp4 -o '%(title)s.%(ext)s'"
 alias ytav="yt-dlp -f 'bestvideo[height<=720]+bestaudio/best[abr>=160]' -o '%(title)s.%(ext)s'"
 
