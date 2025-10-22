@@ -1,4 +1,4 @@
-local lspconfig = require('lspconfig')
+local lspconfig = vim.lsp.config
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
@@ -34,7 +34,7 @@ local setup_ls = function(name, opts)
   opts = opts or {}
   opts.capabilities = capabilities
   opts.on_attach = on_attach
-  lspconfig[name].setup(opts)
+  lspconfig(name, opts)
 end
 
 -- make sure these are installed on your system

@@ -16,7 +16,7 @@ Here are some ideas to get you started:
 -->
 
 - 🖋️ Vincent Yanzee J. Tan
-- 🗓️ 15 years old
+- 🗓️ 16 years old
 - 😄 He/Him
 - 📚 Grade 11 student
 - ⛏️ Minecraft Player!

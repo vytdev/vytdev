@@ -12,10 +12,12 @@ pacman -S nodejs npm lua python python-pip python-pipx jre-openjdk
 
 # convinience tools
 pacman -S fzf bat curl starship htop pkgfile eza neofetch figlet ripgrep \
-          pacman-contrib zip inotify-tools pwgen bind
+          pacman-contrib zip inotify-tools pwgen bind imagemagick
 
 # research papers..
 pacman -S texlive biber
+
+curl -fsSL https://bun.sh/install | bash
 
 # zsh & oh-my-zsh
 #pacman -S zsh

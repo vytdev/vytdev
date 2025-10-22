@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+// render.js
+const fs = require("fs");
+const mj = require("mathjax").init({
+  loader: {load: ["input/tex", "output/svg"]},
+});
+const puppeteer = require("puppeteer");
+
+async function main() {
+  const expr = process.argv[2];
+  const out = process.argv[3] || "output.png";
+  if (!expr) {
+    console.error("Usage: node render.js '<LaTeX>' [output.png]");
+    process.exit(1);
+  }
+
+  const svg = await mj.then(m => m.tex2svgPromise(expr, {display: true}))
+                    .then(node => mj.then(m => m.svg(node)));
+  const html = `<html><body>${svg}</body></html>`;
+
+  const browser = await puppeteer.launch({args: ["--no-sandbox"]});
+  const page = await browser.newPage();
+  await page.setContent(html);
+  const el = await page.$("body > svg");
+  await el.screenshot({path: out, omitBackground: true});
+  await browser.close();
+
+  console.log(`✅ Rendered to ${out}`);
+}
+
+main().catch(err => console.error(err));
