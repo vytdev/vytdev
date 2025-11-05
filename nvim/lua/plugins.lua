@@ -33,6 +33,8 @@ require('lazy').setup({
   { 'saadparwaiz1/cmp_luasnip' },
   { 'L3MON4D3/LuaSnip' },
   { 'neovim/nvim-lspconfig' },
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
 
   -- editing convinience
   { 'windwp/nvim-autopairs', event = 'InsertEnter' },

@@ -2,6 +2,12 @@ local lspconfig = vim.lsp.config
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
+require('mason').setup()
+require('mason-lspconfig').setup({
+  ensure_installed = { 'lua_ls', 'pyright', 'ts_ls', 'taplo', 'clangd' },
+  automatic_installation = true,
+})
+
 -- setup auto-complete
 cmp.setup({
   snippet = {
