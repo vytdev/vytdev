@@ -17,15 +17,13 @@ Here are some ideas to get you started:
 
 - 🖋️ Vincent Yanzee J. Tan
 - 🗓️ 16 years old
-- 😄 He/Him
+- 🫴 He/Him
 - 📚 Grade 11 student
 - ⛏️ Minecraft Player!
 - 🌐 https://vytdev.github.io
 - 🔍 Fun fact: Made all of my projects from my phone!
-- 📦 C (my fav!), JavaScript, TypeScript, Python, Lua, Node.js, Web development
+- 📦 C (my fav!), JavaScript, TypeScript, Python, Lua, NodeJS, Web dev
 - 📬 Reach me: [here](https://vytdev.github.io/contact) or `vytdev@gmail.com`
-
-Help me save for a laptop!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W51I5VSO)
 
