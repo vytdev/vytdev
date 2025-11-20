@@ -1,0 +1,16 @@
+#!/bin/sh
+
+printf 'Are you sure you want to reset your command history? [y/n]: '
+read ans
+
+case "$ans" in
+  y* | '')
+    history -c
+    history -w
+    clear
+    echo "Your command history were reset."
+    ;;
+  * )
+    echo "Canceled."
+    ;;
+esac

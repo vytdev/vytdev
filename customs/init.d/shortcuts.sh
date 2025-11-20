@@ -31,7 +31,6 @@ alias go='git checkout'
 alias gb='git branch'
 
 # other aliases
-alias cls='clear'
 alias hist='history | less'
 alias code='nvim'
 alias m="eval \"\$(history | tac | sed 's/^[0-9 ]*//' | fzf)\""
@@ -54,29 +53,4 @@ s_snd="gain -15 echo 1 1 125 .3 bass 15 treble 7 reverb 50 100 100 100 10 -5"
 mkcd() {
   mkdir -p "$1"
   cd "$1"
-}
-
-# clear cmd history
-clh() {
-  printf 'Are you sure you want to reset your command history? [y/n]: '
-  read ans
-  case "$ans" in
-    y* | '')
-      history -c
-      history -w
-      clear
-      echo "Your command history were reset."
-      ;;
-    * )
-      echo "Canceled."
-      ;;
-  esac
-}
-
-# used to play .mp4 files
-plvid() {
-  echo "Playing audio part..."
-  vid="$1"
-  shift
-  ffmpeg -i "$vid" -vn -f wav - 2>/dev/null | sox -t wav - -d "$@"
 }

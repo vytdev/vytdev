@@ -23,12 +23,12 @@ export GPG_TTY=$(tty)
 export GNUPGHOME="$HOME/.gnupg"
 
 # editor and pager
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export PAGER=less
 
 # git editor and pager
-export GIT_EDITOR=vim
+export GIT_EDITOR=nvim
 export GIT_PAGER=less
 
 # other opts
@@ -36,7 +36,8 @@ export LESS="-R"  # show ansi colours in `less`
 eval "$(dircolors -b)"
 
 # starting dir
-export WDIR="$HOME/projects"
+export WDIR="$HOME/"
+[ ! -d "$WDIR" ] && mkdir "$WDIR"
 shopt -q login_shell && cd "$WDIR"
 
 # completions

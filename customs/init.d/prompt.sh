@@ -22,13 +22,17 @@ case "$TERM" in
     ;;
 esac
 
-# PS1 options.
-nocolor='\n┌─[\u@\h]─(\w)$(__git_ps1 " <%s>") [$?] \d \t\n└── \$ '
-colored='\n\[\e[0m\]\[\e[38;2;128;128;128m\]┌─[\[\e[32m\]\u@\h\[\e[38;2;128;128;128m\]]─(\[\e[33m\]\w\[\e[38;2;128;128;128m\])$(__git_ps1 " <\[\e[35m\]%s\[\e[38;2;128;128;128m\]>") [\[\e[36m\]$?\[\e[38;2;128;128;128m\]] \[\e[34m\]\d \t\n\[\e[38;2;128;128;128m\]└── \[\e[31m\]\$\[\e[0m\] '
+# Dynamic detailed prompt.
+dyn_ncol='\n┌─[\u@\h]─(\w)$(__git_ps1 " <%s>") [$?] \d \t\n└── \$ '
+dyn_wcol='\n\[\e[0m\]\[\e[38;2;128;128;128m\]┌─[\[\e[32m\]\u@\h\[\e[38;2;128;128;128m\]]─(\[\e[33m\]\w\[\e[38;2;128;128;128m\])$(__git_ps1 " <\[\e[35m\]%s\[\e[38;2;128;128;128m\]>") [\[\e[36m\]$?\[\e[38;2;128;128;128m\]] \[\e[34m\]\d \t\n\[\e[38;2;128;128;128m\]└── \[\e[31m\]\$\[\e[0m\] '
 
 # Debian-style prompt.
 deb_ncol='\u@\h:\w\$ '
 deb_wcol='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# Essentials prompt.
+est_ncol='\w[$?]\$ '
+est_wcol='\[\e[32m\]\w\[\e[0m\][\[\e[34m\]$?\[\e[0m\]]\[\e[33m\]\$\[\e[0m\] '
 
 # We need __git_ps1
 if ! type __git_ps1 >/dev/null 2>&1 ; then
@@ -43,23 +47,18 @@ fi
 # Let's set which custom prompt
 # string to use.
 if [ "$colorize" = yes ] ; then
-  PS1=$colored
+  PS1=$deb_wcol
 else
-  PS1=$nocolor
+  PS1=$deb_ncol
 fi
 
-# Debian-style.
-# if [ "$colorize" = yes ] ; then
-#   PS1=$deb_wcol
-# else
-#   PS1=$deb_ncol
-# fi
-
 unset colorize
-unset nocolor
-unset colored
 
+unset dyn_ncol
+unset dyn_wcol
 unset deb_ncol
 unset deb_wcol
+unset est_ncol
+unset est_wcol
 
 unset custom_path_to_git_prompt
