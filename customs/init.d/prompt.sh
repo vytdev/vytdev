@@ -28,7 +28,7 @@ dyn_wcol='\n\[\e[0m\]\[\e[38;2;128;128;128m\]┌─[\[\e[32m\]\u@\h\[\e[38;2;128
 
 # Debian-style prompt.
 deb_ncol='\u@\h:\w\$ '
-deb_wcol='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+deb_wcol='\[\e[32m\]\u@\h\[\e[0m\]:\[\e[34m\]\w\[\e[37m\]\$\[\e[0m\] '
 
 # Essentials prompt.
 est_ncol='\w[$?]\$ '
