@@ -19,7 +19,7 @@ return {
         style = 'warmer',
         code_style = { comments = 'none' },
       }
-      vim.cmd('colorscheme onedark')
+      vim.cmd.colorscheme('onedark')
     end
   },
 
@@ -70,5 +70,7 @@ return {
         always_show_bufferline = true,
       }
     }
-  }
+  },
+
+  { 'Bekaboo/dropbar.nvim' },
 }
