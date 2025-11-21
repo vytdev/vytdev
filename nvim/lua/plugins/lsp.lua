@@ -10,6 +10,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     opts = {
       ensure_installed = { 'lua_ls', 'pyright', 'ts_ls' },
+      -- use system-wide clangd
       automatic_installation = true
     }
   },
@@ -40,18 +41,23 @@ return {
           '--header-insertion=never'
         }})
 
-      -- keymaps when LSP attaches
+      -- setup keybindings on lsp attach
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
-          local map = vim.keymap.set
 
-          if client.server_capabilities.hoverProvider then
-            map('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
+          -- only set these keys to the lsp buff
+          local map = function(mode, key, func)
+            vim.keymap.set(mode, key, func, { buffer = args.buf })
           end
-          map('n', 'gd', vim.lsp.buf.definition, { buffer = args.buf })
-          map('n', 'gr', vim.lsp.buf.references, { buffer = args.buf })
-          map('n', '<leader>rn', vim.lsp.buf.rename, { buffer = args.buf })
+
+          -- setup keymaps
+          if client.server_capabilities.hoverProvider then
+            map('n', 'K', vim.lsp.buf.hover)
+          end
+          map('n', 'gd', vim.lsp.buf.definition)
+          map('n', 'gr', vim.lsp.buf.references)
+          map('n', '<leader>rn', vim.lsp.buf.rename)
         end,
       })
 
@@ -63,7 +69,7 @@ return {
             [vim.diagnostic.severity.ERROR] = '󰅚',
             [vim.diagnostic.severity.WARN]  = '󰀪',
             [vim.diagnostic.severity.INFO]  = '󰋽',
-            [vim.diagnostic.severity.HINT]  = '󰙎',
+            [vim.diagnostic.severity.HINT]  = '󰌶',
           },
         },
         underline = true,

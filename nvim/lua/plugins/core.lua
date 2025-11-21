@@ -6,9 +6,24 @@ return {
   { 'nvim-tree/nvim-web-devicons' },
 
   -- editing
-  { 'uga-rosa/ccc.nvim', opts = { highlighter = { auto_enable = true } } },
   { 'windwp/nvim-autopairs', event = 'InsertEnter', opts = {} },
   { 'numToStr/Comment.nvim' }, -- gcc
+
+  -- editing: color picker
+  {
+    'uga-rosa/ccc.nvim',
+    config = function()
+      require('ccc').setup{
+        highlighter = {
+          auto_enable = true
+        }
+      }
+
+      local map = vim.keymap.set
+      map('n', '<leader>cc', '<cmd>CccConvert<cr>')
+      map({ 'n', 'i' }, '<c-b>', '<cmd>CccPick<cr>')
+    end
+  },
 
   -- colorscheme
   {
@@ -23,7 +38,7 @@ return {
     end
   },
 
-  -- treesitter for better code parsing
+  -- treesitter for better code parsing and analysis
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
@@ -44,33 +59,4 @@ return {
       }
     end
   },
-
-  -- search & nav
-  {
-    'nvim-telescope/telescope.nvim',
-    keys = {
-      { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find Files' },
-      { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Grep Files' },
-      { '<leader>fr', '<cmd>Telescope oldfiles<cr>',  desc = 'Recent Files' },
-      { '<leader>fb', '<cmd>Telescope buffers<cr>',   desc = 'List Buffers' },
-      { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'Help Tags' },
-    }
-  },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-
-  -- UI
-  {
-    'akinsho/bufferline.nvim',
-    version = '*',
-    opts = {
-      options = {
-        mode = 'buffers',
-        numbers = 'none',
-        separator_style = 'thin',
-        always_show_bufferline = true,
-      }
-    }
-  },
-
-  { 'Bekaboo/dropbar.nvim' },
 }
