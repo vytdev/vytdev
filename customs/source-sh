@@ -1,8 +1,8 @@
-export PATH=$PATH:$CUSTOMS_HOME/bin
+export PATH=$PATH:$CUSTOMS/bin
 
 # Run some custom init scripts.
-if [ -d $CUSTOMS_HOME/init.d ] ; then
-  for i in $CUSTOMS_HOME/init.d/*.sh ; do
+if [ -d $CUSTOMS/init.d ] ; then
+  for i in $CUSTOMS/init.d/*.sh ; do
     if [ -r $i ] ; then
       . $i
     fi

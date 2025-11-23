@@ -1,3 +1,3 @@
-export CUSTOMS_HOME=~/vytdev/customs
-. "$CUSTOMS_HOME/source-sh"
+export CUSTOMS=~/vytdev/customs
+. "$CUSTOMS/source-sh"
 source /usr/share/doc/pkgfile/command-not-found.bash

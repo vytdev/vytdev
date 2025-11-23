@@ -1,26 +1,42 @@
 # Message-Of-The-Day
 #
 
-echo
-echo "  Hi, vytdev!"
-echo
-echo "  A legend once said:"
-echo
-echo "    For what is a man, what has he got"
-echo "    If not himself, then he has naught"
-echo "    To say the things he truly feels"
-echo "    And not the words of one who kneels"
-echo "    The record shows, I took the blows"
-echo "    And did it, My Way!"
-echo
-echo "    -- Frank Sinatra"
+# Respect .hushlogin file.
+if [ ! -e "$HOME/.hushlogin" ]; then
 
-# Color palette.
-cnt=0
-while [ "$cnt" -lt 16 ]; do
-  [ $((cnt % 8)) -eq 0 ] && printf "\n    "
-  printf "\033[48;5;%sm  \033[0m" "$cnt"
-  cnt=$((cnt + 1))
-done
-printf "\n\n"
-unset cnt
+  # Check support for ANSI colours.
+  case "$TERM" in xterm-*color)
+
+    # A green-colored block
+    b='\e[38;5;10m\e[48;5;10m..\e[0m'
+
+    # The message.
+    echo
+    echo -e "                    \e[1mHi, \e[32m$(whoami)\e[39m!\e[0m"
+    echo
+    echo -e "    $b$b    $b$b    A legend once said:"
+    echo -e "    $b$b    $b$b"
+    echo -e "        $b$b          For what is a man, what has he got"
+    echo -e "      $b$b$b$b        If not himself, then he has naught"
+    echo -e "      $b    $b        To say the things he truly feels"
+    echo -e "                      And not the words of one who kneels"
+    echo -e "                      The record shows, I took the blows"
+    echo -e "                      And did it, My Way!"
+    echo
+    echo -e "                      \e[1mFrank Sinatra\e[0m"
+
+    unset b
+
+    # Color palette.
+    cnt=0
+    while [ "$cnt" -lt 16 ]; do
+      [ $((cnt % 8)) -eq 0 ] && printf "\n                    "
+      printf "\e[38;5;%sm\e[48;5;%sm..\e[0m" "$cnt" "$cnt"
+      cnt=$((cnt + 1))
+    done
+    printf "\n\n"
+    unset cnt
+
+  # Fallback to colorless text
+  ;; *) envsubst < "$CUSTOMS/init.d/motd";; esac
+fi
