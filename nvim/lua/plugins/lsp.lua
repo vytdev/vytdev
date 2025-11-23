@@ -66,10 +66,10 @@ return {
         virtual_text = false,
         signs = {
           text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚',
-            [vim.diagnostic.severity.WARN]  = '󰀪',
-            [vim.diagnostic.severity.INFO]  = '󰋽',
-            [vim.diagnostic.severity.HINT]  = '󰌶',
+            [vim.diagnostic.severity.ERROR] = '󰅚 ',
+            [vim.diagnostic.severity.WARN]  = '󰀪 ',
+            [vim.diagnostic.severity.INFO]  = '󰋽 ',
+            [vim.diagnostic.severity.HINT]  = '󰌶 ',
           },
         },
         underline = true,
@@ -95,8 +95,14 @@ return {
       cmp.setup{
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'luasnip' },
           { name = 'buffer' },
           { name = 'path' },
+        },
+        snippet = {
+          expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+          end
         },
         mapping = cmp.mapping.preset.insert{
           ['<c-space>'] = cmp.mapping.complete(),
@@ -104,5 +110,23 @@ return {
         }
       }
     end
+  },
+
+  -- snippets
+  {
+    'L3MON4D3/LuaSnip',
+    dependencies = {
+      'rafamadriz/friendly-snippets',
+    },
+    config = function()
+      require('luasnip.loaders.from_vscode').lazy_load()
+    end,
+  },
+
+  -- show func signature while typing
+  {
+    'ray-x/lsp_signature.nvim',
+    event = 'InsertEnter',
+    opts = { bind = true, hint_enable = false }
   }
 }
