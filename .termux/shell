@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# Uncomment this if needed. For failsafe or utility.
+#exec /data/data/com.termux/files/usr/bin/bash "$@"
+
+# Default values for cli opts.
+login=
+no_pulse=
+distro=archlinux
+user=vytdev
+
+# Process options.
+while [ "$#" -gt 0 ]; do
+  O="$1"
+  shift
+  case "$O" in
+    -h|--help)
+      echo "usage: $0 [options] [--] [args]"
+      echo "Helper to start proot-distro automatically."
+      echo "  -h --help         Show this help and exit."
+      echo "  -l --login        Start proot-distro. Starts a Termux shell if"
+      echo "                    not specified."
+      echo "  -A --no-pulse     Do not start a pulseaudio server."
+      echo "  -d --distro DISTRO  Use a different distro. [$distro]"
+      echo "  -u --user USER    Login as another user. [$user]"
+      echo "  -c --run          Execute a command (for comapt-only)."
+      echo "  args              Options for proot-distro."
+      echo "By vytdev."
+      exit 1
+      ;;
+    -l|--login)     login=yes ;;
+    -A|--no-pulse)  no_pulse=yes ;;
+    -d|--distro)    distro="$1" ; shift ;;
+    -u|--user)      user="$1" ; shift ;;
+    -c|--run)       exec "$@" ;;
+    --)   shift ; break ;;
+    -*)   echo "$0: unrecognized option '$O'" >&2 ; exit 1 ;;
+    *)    break ;;
+  esac
+done
+
+if [ -n "$login" ]; then
+  # Start a pulseaudio server.
+  if [ -z "$no_pulse" ]; then
+    pulseaudio --start --exit-idle-time=-1
+    pacmd load-module module-native-protocol-tcp \
+             auth-ip-acl=127.0.0.1 auth-anonymous=1
+  fi
+  # Start proot-distro.
+  exec proot-distro login "$distro" \
+          --isolated \
+          --bind /data/data/com.termux/files/home:/root \
+          --bind /storage/emulated/0:/disk \
+          --user "$user" "$@"
+fi
+
+# Find a proper shell.
+for sh in \
+  /data/data/com.termux/files/usr/bin/bash \
+  /data/data/com.termux/files/usr/bin/sh \
+  /system/bin/sh
+do
+  [ -x "$sh" ] && break
+done
+
+# Use that shell.
+echo "$0: -l not specified. Using $sh" >&2
+export SHELL="$sh"
+exec "$SHELL" "$@"
