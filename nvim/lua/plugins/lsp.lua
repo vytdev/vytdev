@@ -99,8 +99,8 @@ return {
           { name = 'path' },
         },
         mapping = cmp.mapping.preset.insert{
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          ['<c-space>'] = cmp.mapping.complete(),
+          ['<tab>'] = cmp.mapping.confirm({ select = true }),
         }
       }
     end
