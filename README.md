@@ -13,7 +13,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-Hi, I'm Vincent Yanzee J. Tan.
+Hi!
 
 Started [this project][debug-stick] at 13 because Bedrock didn’t have a debug
 stick. It somehow grew to hundreds of thousands of downloads, grateful for
@@ -22,7 +22,7 @@ everyone who supported it.
 I’ll keep maintaining it until Mojang adds an official one. After that, it
 might be time for me to move on.
 
-Thanks!
+— vytdev
 
 ![Profile Visits](https://komarev.com/ghpvc/?username=vytdev&label=Profile%20visits&color=0e75b6&style=flat)
 
