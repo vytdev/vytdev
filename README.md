@@ -15,15 +15,10 @@ Here are some ideas to get you started:
 
 Hi!
 
-Started [this project][debug-stick] at 13 because Bedrock didn’t have a debug
-stick. It somehow grew to hundreds of thousands of downloads, grateful for
-everyone who supported it.
+PGP: [6C6D9C3B4D2B5726][pubkey]
 
-I’ll keep maintaining it until Mojang adds an official one. After that, it
-might be time for me to move on.
+![Profile Visits][pf-views]
 
-— vytdev
-
-![Profile Visits](https://komarev.com/ghpvc/?username=vytdev&label=Profile%20visits&color=0e75b6&style=flat)
-
+[pf-views]: https://komarev.com/ghpvc/?username=vytdev
+[pubkey]: https://raw.github.com/vytdev/vytdev/master/pubkey.asc
 [debug-stick]: https://github.com/vytdev/debug-stick
