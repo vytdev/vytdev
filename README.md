@@ -15,11 +15,6 @@ Here are some ideas to get you started:
 
 Hi!
 
-I experimented with a lot of low-level stuff last year, so my github is a bit messy because
-of that. Decided to stay on this acc bc I don't wanna lose the greens.
-
-PGP: [6C6D9C3B4D2B5726][pubkey]
-
 ![Profile Visits][pf-views]
 
 [pf-views]: https://komarev.com/ghpvc/?username=vytdev
